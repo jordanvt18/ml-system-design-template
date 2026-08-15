@@ -41,6 +41,8 @@ python_version = "3.10"
 strict = true
 # Terceros sin stubs (pandas/sklearn): chequeo estricto aplica a nuestro código.
 ignore_missing_imports = true
+# sklearn expone sus bases como Any; permitir subclasificarlas en el template.
+allow_subclassing_any = true
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
