@@ -25,11 +25,12 @@ class DateFeatureExtractor(BaseEstimator, TransformerMixin):
     """
 
     def __init__(self, date_column: str, normalize_days: bool = True) -> None:
+        """Initialize the transformer with the target datetime column."""
         self.date_column = date_column
         self.normalize_days = normalize_days
         self.feature_names_: list[str] = []
 
-    def fit(self, X: pd.DataFrame, y: Any = None) -> "DateFeatureExtractor":
+    def fit(self, X: pd.DataFrame, y: Any = None) -> DateFeatureExtractor:
         """Validate the input and precompute feature names.
 
         Args:
